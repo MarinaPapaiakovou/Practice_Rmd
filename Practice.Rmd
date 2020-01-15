@@ -21,6 +21,13 @@ library(tidyverse)
 Comp <- read.csv("compensation.csv")
 head(Comp)
 ```
+``` {r}
+Comp %>%
+summarise(meanF = mean(Fruit))
+
+```
+
+
 
 ## Including Plots
 
