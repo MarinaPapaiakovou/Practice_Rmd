@@ -1,0 +1,40 @@
+---
+title: "Practice"
+author: "Marina Papaiakovou"
+date: "1/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Practice with R Markdown
+## Compensation data 
+
+Importing data now into R 
+Compensation data 
+
+
+```{r}
+library(tidyverse)
+Comp <- read.csv("compensation.csv")
+head(Comp)
+```
+
+## Including Plots
+
+Adding a plot, Root ~ fruit coloured by Grazing 
+
+```{r}
+ggplot(Comp, aes (x= Root, y= Fruit, colour = Grazing))+
+geom_point()
+
+```
+
+```{r}
+ggplot (Comp, aes(x = Root, y = Fruit, colour = Grazing))+
+facet_wrap(~ Grazing)+
+geom_boxplot()
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
